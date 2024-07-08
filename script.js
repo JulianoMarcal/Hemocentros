@@ -1,36 +1,63 @@
 function showHemocentros() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-
-            // Simulação de busca de hemocentros próximos
-            var hemocentrosProximos = buscarHemocentrosProximos(latitude, longitude);
-
-            // Mostrar os hemocentros na tela
-            var resultsElement = document.getElementById('results');
-            resultsElement.innerHTML = '<h2>Hemocentros Próximos:</h2>';
-            
-            if (hemocentrosProximos.length > 0) {
-                hemocentrosProximos.forEach(function(hemocentro) {
-                    var hemocentroElement = document.createElement('div');
-                    hemocentroElement.className = 'hemocentro';
-                    hemocentroElement.innerHTML = '<strong>' + hemocentro.nome + '</strong><br>' + hemocentro.endereco;
-                    resultsElement.appendChild(hemocentroElement);
-                });
-            } else {
-                resultsElement.innerHTML += '<p>Nenhum hemocentro encontrado próximo.</p>';
-            }
-
-            // Esconder o botão após exibir os hemocentros
-            var button = document.getElementById('findButton');
-            button.style.display = 'none';
-        }, function(error) {
-            alert('Erro ao obter geolocalização: ' + error.message);
-        });
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
     } else {
         alert('Geolocalização não suportada pelo seu navegador.');
+        // Tenta obter a localização baseada no IP
+        fetch('https://ipinfo.io/json?token=<YOUR_TOKEN>')
+            .then(response => response.json())
+            .then(data => {
+                var coords = data.loc.split(',');
+                var latitude = parseFloat(coords[0]);
+                var longitude = parseFloat(coords[1]);
+                buscarEExibirHemocentros(latitude, longitude);
+            })
+            .catch(error => console.log('Erro ao obter localização pelo IP:', error));
     }
+}
+
+function successCallback(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    buscarEExibirHemocentros(latitude, longitude);
+}
+
+function errorCallback(error) {
+    alert('Erro ao obter geolocalização: ' + error.message);
+    // Tenta obter a localização baseada no IP
+    fetch('https://ipinfo.io/json?token=<YOUR_TOKEN>')
+        .then(response => response.json())
+        .then(data => {
+            var coords = data.loc.split(',');
+            var latitude = parseFloat(coords[0]);
+            var longitude = parseFloat(coords[1]);
+            buscarEExibirHemocentros(latitude, longitude);
+        })
+        .catch(error => console.log('Erro ao obter localização pelo IP:', error));
+}
+
+function buscarEExibirHemocentros(latitude, longitude) {
+    // Simulação de busca de hemocentros próximos
+    var hemocentrosProximos = buscarHemocentrosProximos(latitude, longitude);
+
+    // Mostrar os hemocentros na tela
+    var resultsElement = document.getElementById('results');
+    resultsElement.innerHTML = '<h2>Hemocentros Próximos:</h2>';
+    
+    if (hemocentrosProximos.length > 0) {
+        hemocentrosProximos.forEach(function(hemocentro) {
+            var hemocentroElement = document.createElement('div');
+            hemocentroElement.className = 'hemocentro';
+            hemocentroElement.innerHTML = '<strong>' + hemocentro.nome + '</strong><br>' + hemocentro.endereco;
+            resultsElement.appendChild(hemocentroElement);
+        });
+    } else {
+        resultsElement.innerHTML += '<p>Nenhum hemocentro encontrado próximo.</p>';
+    }
+
+    // Esconder o botão após exibir os hemocentros
+    var button = document.getElementById('findButton');
+    button.style.display = 'none';
 }
 
 // Função para calcular a distância entre duas coordenadas (em quilômetros)
@@ -230,7 +257,7 @@ function buscarHemocentrosProximos(latitude, longitude) {
         {   nome: 'Núcleo Regional De Diamantina Hemominas',
             endereco: 'Rua Da Glória, 469 Fundos - Centro - Diamantina, Minas Gerais - Cep: 39100-000',
             latitude: -18.241246,
-            longitude: -43.602912 
+            longitude: -43.602912
         },
         {   nome: 'Núcleo Regional De Manhuaçu',
             endereco:'Rua Frederico Dolabela, 289 - Baixada - Manhuaçu, Minas Gerais - Cep: 36900-000',
