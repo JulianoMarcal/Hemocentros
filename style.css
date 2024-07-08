@@ -1,66 +1,45 @@
-:root {
-    --main-bg-color: #da5a5a;
-    --main-text-color: #ffffff;
-    --header-bg-color: #630000;
-    --button-bg-color: beige;
-}
-
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: var(--main-bg-color);
+    background-color: #da5a5a;
     padding: 20px;
 }
 
-/* Adiciona um layout responsivo para o cabeçalho */
+#logo {
+    width: 150px; /* Ajuste a largura da logo conforme necessário */
+    height: auto;
+    margin: 10px auto; /* Alinha a logo ao centro */
+}
+
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap; /* Permite que o conteúdo do cabeçalho se organize em várias linhas, se necessário */
-}
-
-/* Ajusta a largura da logo para dispositivos móveis */
-#logo {
-    width: 100px; /* Ajuste conforme necessário */
-    margin: 10px auto; /* Centraliza a logo no mobile */
+    flex-direction: column; /* Alinha os elementos em coluna */
 }
 
 h1 {
-    color: var(--main-text-color);
+    color: #ffffff;
     border: 2px solid black;
     padding: 10px;
     display: inline-block;
-    font-size: 20px; /* Reduz o tamanho da fonte para dispositivos móveis */
+    font-size: 24px;
     font-family: Arial, sans-serif;
-    background-color: var(--header-bg-color);
-}
-
-#findButton {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.8); /* Adiciona um fundo semi-transparente ao botão */
-    border: none;
-    border-radius: 5px;
-    width: 100%; /* Ajusta o botão para ocupar toda a largura da tela */
-    max-width: 300px; /* Limita a largura máxima do botão */
+    background-color: #630000;
+    text-align: center; /* Centraliza o texto dentro do h1 */
 }
 
 button {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: var(--button-bg-color);
+    background-color: beige;
     cursor: pointer;
+    margin: 20px auto; /* Centraliza o botão */
+    display: block; /* Garante que o botão seja exibido como bloco */
 }
 
 #results {
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .hemocentro {
@@ -70,7 +49,6 @@ button {
     margin: 10px auto;
     border: 2px solid #000;
     border-radius: 8px;
-    width: 90%; /* Ajusta a largura do card dos hemocentros */
-    max-width: 500px; /* Limita a largura máxima do card */
+    max-width: 600px;
     text-align: left;
 }
