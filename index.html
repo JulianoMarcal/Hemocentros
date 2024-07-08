@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header role="banner">
+    <header>
         <img src="images/logo.jpg" alt="Logo" id="logo">
         <h1>ENCONTRE O HEMOCENTRO MAIS PRÓXIMO A VOCÊ</h1>
     </header>
-    <button id="findButton" onclick="showHemocentros()" aria-label="Encontrar Hemocentros">Encontrar Hemocentros</button>
-    <div id="results" role="main"></div>
-    <div id="loading" style="display: none;" aria-live="polite">Carregando...</div>
+    <button id="findButton" onclick="showHemocentros()">Encontrar Hemocentros</button>
+    <div id="results"></div>
     <script src="script.js"></script>
 </body>
 </html>
