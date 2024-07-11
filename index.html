@@ -3,16 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hemocentros Próximos</title>
+    <title>Hemocentros</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <img src="images/logo.jpg" alt="Logo" id="logo">
-        <h1>ENCONTRE O HEMOCENTRO MAIS PRÓXIMO A VOCÊ</h1>
+        <img src="Images/logo.jpg" alt="Logo" id="logo">
+        <div class="header-text">
+            <h1>Encontre o hemocentro mais próximo a você</h1>
+        </div>
     </header>
-    <button id="findButton" onclick="showHemocentros()">Encontrar Hemocentros</button>
-    <div id="results"></div>
+    <main>
+        <div class="location-selector">
+            <div class="selector-label">
+                <label for="estado">Estado:</label>
+                <select id="estado">
+                    <option value="">Selecione um estado</option>
+                </select>
+            </div>
+            <div class="selector-label">
+                <label for="municipio">Município:</label>
+                <select id="municipio">
+                    <option value="">Selecione um município</option>
+                </select>
+            </div>
+            <button onclick="buscarHemocentros()">Buscar Hemocentros</button>
+        </div>
+        <div id="resultados">
+            <!-- Resultados dos hemocentros serão exibidos aqui -->
+        </div>
+        <div id="no-hemocentro" class="no-hemocentro" style="display:none;">
+            Sua cidade não possui hemocentro. Aqui estão todos os hemocentros em seu estado:
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
