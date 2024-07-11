@@ -1,54 +1,88 @@
+
+/* style.css */
+
+
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #da5a5a;
-    padding: 20px;
+    background-color: rgb(214, 101, 101);
+    color: white;
 }
 
-#logo {
-    width: 150px; /* Ajuste a largura da logo conforme necessário */
-    height: auto;
-    margin: 10px auto; /* Alinha a logo ao centro */
-}
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; /* Alinha os elementos em coluna */
+    text-align: center;
+    margin: 20px;
 }
 
-h1 {
-    color: #ffffff;
-    border: 2px solid black;
+
+#logo {
+    max-width: 150px;
+}
+
+
+.header-text h1 {
+    background-color: rgb(99, 0, 0);
+    color: white;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
     padding: 10px;
     display: inline-block;
-    font-size: 24px;
-    font-family: Arial, sans-serif;
-    background-color: #630000;
-    text-align: center; /* Centraliza o texto dentro do h1 */
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: beige;
+
+.location-selector {
+    text-align: center;
+    margin: 20px;
+}
+
+
+.location-selector label {
+    background-color: rgb(99, 0, 0);
+    color: white;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 5px;
+    display: inline-block;
+    margin: 10px;
+}
+.location-selector select {
+    width: 200px
+}
+.location-selector button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 16px;
     cursor: pointer;
-    margin: 20px auto; /* Centraliza o botão */
-    display: block; /* Garante que o botão seja exibido como bloco */
 }
 
-#results {
-    margin-top: 20px;
+
+#resultados {
+    text-align: center;
+    margin: 5px;
 }
+
 
 .hemocentro {
-    background-color: #fff;
-    color: #000;
-    padding: 15px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10;
     margin: 10px auto;
-    border: 2px solid #000;
-    border-radius: 8px;
-    max-width: 600px;
-    text-align: left;
+    max-width: 400px;
+    border: 2px solid black;
+}
+
+
+.no-hemocentro {
+    display: none; /* Oculto por padrão */
+    border: 2px solid white; /* Borda */
+    background-color: black; /* Fundo dentro da borda */
+    color: white; /* Texto em branco */
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
