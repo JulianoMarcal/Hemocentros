@@ -1,4 +1,3 @@
-
 /* style.css */
 
 
@@ -62,7 +61,7 @@ header {
 
 #resultados {
     text-align: center;
-    margin: 5px;
+    margin-bottom: 20px
 }
 
 
@@ -76,6 +75,23 @@ header {
     border: 2px solid black;
 }
 
+.credit {
+    text-align: center;
+    font-size: 12px; /* Texto menor para ser mais discreto */
+    color: #cccccc; /* Cor mais clara para o texto */
+    margin-top: 20px; /* Espaçamento para separá-lo dos resultados */
+}
+
+.credit a {
+    color: #cccccc; /* Cor mais clara para o link */
+    text-decoration: none; /* Remover sublinhado do link */
+}
+
+.credit a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+
 
 .no-hemocentro {
     display: none; /* Oculto por padrão */
@@ -86,3 +102,4 @@ header {
     border-radius: 10px;
     margin-top: 20px;
 }
+
