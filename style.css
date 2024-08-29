@@ -77,27 +77,26 @@ header {
 
 .credit {
     text-align: center;
-    font-size: 12px; /* Texto menor para ser mais discreto */
-    color: #cccccc; /* Cor mais clara para o texto */
-    margin-top: 20px; /* Espaçamento para separá-lo dos resultados */
-}
+    font-size: 12px; 
+    color: #ffffff; 
+    margin-top: 20px; 
 
 .credit a {
-    color: #cccccc; /* Cor mais clara para o link */
-    text-decoration: none; /* Remover sublinhado do link */
+    color: #ffffff; 
+    text-decoration: none; 
 }
 
 .credit a:hover {
-    text-decoration: underline; /* Sublinhado ao passar o mouse */
+    text-decoration: underline; 
 }
 
 
 
 .no-hemocentro {
-    display: none; /* Oculto por padrão */
-    border: 2px solid white; /* Borda */
-    background-color: black; /* Fundo dentro da borda */
-    color: white; /* Texto em branco */
+    display: none; 
+    border: 2px solid white; 
+    background-color: black; 
+    color: white; 
     padding: 10px;
     border-radius: 10px;
     margin-top: 20px;
